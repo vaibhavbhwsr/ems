@@ -1,0 +1,29 @@
+-r requirements.txt
+
+# Main
+djangorestframework
+psycopg2-binary
+
+# Development tools
+django-debug-toolbar
+django-extensions
+ipython
+ipdb
+
+# Clean Coding
+flake8
+isort
+black
+
+# Media
+pillow
+
+# Deployment
+gunicorn
+
+# Documentation
+drf-yasg
+
+# Others
+django-crispy-forms
+crispy-bootstrap5

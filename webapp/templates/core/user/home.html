@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n static %}
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+  {% include 'core/user/header.html' %}
+  {% block home_content %}
+    <div class="py-2">
+      {% include 'core/user/options.html' %}
+    </div>
+    {% block content_with_options %}
+
+    {% endblock %}
+  {% endblock %}
+{% endblock %}

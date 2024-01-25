@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block title %}Login Page{% endblock title %}
+{% block extra_header %}
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock extra_header %}
+{% block content %}
+<div class="login-container">
+  <div class="text-center">
+    <h2>Login</h2>
+  </div>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form | crispy }}
+      <button type="submit" class="login-button my-3">Login</button>
+      <a class="btn btn-lg btn-warning btn-block float-end my-3" href="{% url 'core:password_reset' %}">Forgot Password?
+      </a>
+  </form>
+  <small>
+    <p class="text-center my-5">
+      Not registered yet?
+      <a href="{% url 'core:signup' %}"><u><b>Register Now!</b></u></a>
+    </p>
+  </small>
+</div>
+{% endblock content %}
